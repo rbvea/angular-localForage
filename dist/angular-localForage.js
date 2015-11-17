@@ -10,7 +10,7 @@
 
   if(typeof define === 'function' && define.amd) {                    // AMD
     define(['localforage'], function(localforage) {
-      factory(root.angular, localforage);
+      factory(root.angular || window.angular, localforage);
     });
   } else if(typeof exports === 'object' || typeof global === 'object') {
     var angular = root.angular || (window && window.angular);
@@ -480,4 +480,3 @@
 
   return angularLocalForage.name;
 });
-
